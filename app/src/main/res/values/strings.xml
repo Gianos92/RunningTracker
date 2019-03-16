@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Running Tracker</string>
+    <string name="insert_date">INSERT DATE</string>
+    <string name="date_sample_text">00/00/0000</string>
+    <string name="insert_distance">INSERT DISTANCE</string>
+    <string name="distance_sample_text">00.00</string>
+    <string name="insert_duration">INSERT DURATION</string>
+    <string name="duration_sample_text">00:00:00</string>
+    <string name="insert_average_pr">INSERT AVG PACE RATE</string>
+    <string name="average_pr_sample_text">00:00</string>
+    <string name="workout_type">CHOOSE WORKOUT TYPE</string>
+    <string name="workout_training">Training</string>
+    <string name="workout_race">Race</string>
+
+    <!-- Title for the Distance EditText in the list_item layout -->
+    <string name="Distance">Distance</string>
+
+    <!-- Title for the Duration EditText in the list_item layout -->
+    <string name="Duration">Duration</string>
+
+    <!-- Title for the Average Pace Rate EditText in the list_item layout -->
+    <string name="AvgPR">Avg Pace Rate</string>
+
+    <!-- Toast message in editor when new workout has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_workout_successful">Workout saved</string>
+
+    <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_workout_failed">Error with saving workout</string>
+
+    <!-- Title text for the empty view, which describes the empty dog house image [CHAR LIMIT=50] -->
+    <string name="empty_view_title_text">No workouts yet...</string>
+
+    <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
+    <string name="empty_view_subtitle_text">Get started by adding a workout</string>
+
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+
+    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
+    <string name="discard">Discard</string>
+
+    <!-- Dialog button text for the option to keep editing the current pet [CHAR LIMIT=20] -->
+    <string name="keep_editing">Keep Editing</string>
+
+</resources>
