@@ -29,7 +29,7 @@
                 android:layout_alignBottom="@id/bottom_header"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="78dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="12dp"
                 android:src="@drawable/add_workout_btn"
                 app:backgroundTint="@color/colorPrimary" />
 
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_below="@id/custom_header"
-                android:layout_marginTop="-16dp"
+                android:layout_marginTop="-20dp"
                 android:background="#F2F2F2" />
 
         </RelativeLayout>
@@ -47,15 +47,157 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:background="#F2F2F2">
+        android:layout_weight="3"
+        android:background="#F2F2F2"
+        android:paddingBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <TextView
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Text"/>
+            android:layout_gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="24dp">
+
+            <ImageView
+                android:id="@+id/number_of_workouts"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:padding="4dp"
+                android:src="@drawable/number_of_workouts" />
+
+            <TextView
+                android:id="@+id/workouts_overview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/number_of_workouts"
+                android:layout_centerHorizontal="true"
+                android:padding="2dp"
+                android:text="Workouts"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/workouts_overview_kpi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/workouts_overview_title"
+                android:layout_centerHorizontal="true"
+                android:padding="2dp"
+                android:text="00"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/workouts_overview_kpi"
+                android:layout_centerHorizontal="true"
+                android:text="sessions"
+                android:textColor="@color/colorPrimary"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="24dp">
+
+            <ImageView
+                android:id="@+id/workout_distance"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:padding="4dp"
+                android:src="@drawable/distance_run"/>
+
+            <TextView
+                android:id="@+id/distance_overview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/workout_distance"
+                android:layout_centerHorizontal="true"
+                android:padding="2dp"
+                android:text="Distance"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/distance_overview_kpi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/distance_overview_title"
+                android:layout_centerHorizontal="true"
+                android:padding="2dp"
+                android:text="00.00"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/distance_overview_kpi"
+                android:layout_centerHorizontal="true"
+                android:text="km"
+                android:textColor="@color/colorPrimary"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="24dp">
+
+            <ImageView
+                android:id="@+id/duration"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:padding="4dp"
+                android:src="@drawable/workout_duration" />
+
+            <TextView
+                android:id="@+id/duration_overview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration"
+                android:layout_centerHorizontal="true"
+                android:padding="2dp"
+                android:text="Time"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/duration_overview_kpi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration_overview_title"
+                android:layout_centerHorizontal="true"
+                android:padding="2dp"
+                android:text="00.00"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration_overview_kpi"
+                android:layout_centerHorizontal="true"
+                android:text="hours"
+                android:textColor="@color/colorPrimary"/>
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -109,8 +251,6 @@
                 android:text="@string/empty_view_subtitle_text"
                 android:textAppearance="?android:textAppearanceSmall" />
         </RelativeLayout>
-
-
 
     </RelativeLayout>
 
