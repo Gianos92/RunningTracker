@@ -192,6 +192,10 @@ public class AddWorkoutActivity extends AppCompatActivity implements
                 // Otherwise, the insertion was successful and we can display a toast.
                 Toast.makeText(this, getString(R.string.editor_insert_workout_successful),
                         Toast.LENGTH_SHORT).show();
+
+                // Exits the activity.
+                finish();
+
             }
         } else {
             // Otherwise this is an EXISTING workout, so updates the workout with content URI: mCurrentWorkoutUri

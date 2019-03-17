@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import static com.self.runningtracker.data.WorkoutContract.*;
 
@@ -104,6 +105,13 @@ public class HomepageActivity extends AppCompatActivity implements LoaderManager
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         // Updates {@link WorkoutCursorAdapter} with this new cursor containing updated workout data.
         mCursorAdapter.swapCursor(data);
+
+        String numberOfWorkouts = Integer.toString(data.getCount());
+
+        // Finds the view that will be used to hold the query result.
+        TextView dateTextView = findViewById(R.id.workouts_overview_kpi);
+
+        dateTextView.setText(numberOfWorkouts);
     }
 
     @Override

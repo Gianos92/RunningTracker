@@ -70,7 +70,7 @@ public class WorkoutProvider extends ContentProvider {
         Cursor cursor;
 
         // Matches the Uri to the correct code.
-        int match = sUriMatcher.match(uri);
+            int match = sUriMatcher.match(uri);
         switch (match){
             case WORKOUTS:
                 cursor = database.query(WorkoutEntry.TABLE_NAME,projection,selection,selectionArgs,
