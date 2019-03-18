@@ -106,12 +106,32 @@ public class HomepageActivity extends AppCompatActivity implements LoaderManager
         // Updates {@link WorkoutCursorAdapter} with this new cursor containing updated workout data.
         mCursorAdapter.swapCursor(data);
 
-        String numberOfWorkouts = Integer.toString(data.getCount());
-
         // Finds the view that will be used to hold the query result.
         TextView dateTextView = findViewById(R.id.workouts_overview_kpi);
 
-        dateTextView.setText(numberOfWorkouts);
+        // Stores the query result to the selected TextView.
+        dateTextView.setText(Integer.toString(data.getCount()));
+
+        // Iterates through each workout distance to get the total distance.
+        float distance = 0;
+        data.moveToFirst();
+        try {
+            while(data.moveToNext()){
+                float workoutDistance = data.getFloat(data.getColumnIndex(WorkoutEntry.COLUMN_DISTANCE));
+                distance += workoutDistance;
+            }
+        }finally {
+            data.moveToFirst();
+            float firstWorkout = data.getFloat(data.getColumnIndex(WorkoutEntry.COLUMN_DISTANCE));
+            distance += firstWorkout;
+        }
+
+        // Finds the view that will be used to hold the query result.
+        TextView distanceTextView = findViewById(R.id.distance_overview_kpi);
+
+        // Stores the query result to the selected TextView.
+        distanceTextView.setText(Float.toString(distance));
+
     }
 
     @Override
