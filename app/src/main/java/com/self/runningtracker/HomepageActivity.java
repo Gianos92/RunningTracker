@@ -113,25 +113,33 @@ public class HomepageActivity extends AppCompatActivity implements LoaderManager
         dateTextView.setText(Integer.toString(data.getCount()));
 
         // Iterates through each workout distance to get the total distance.
-        float distance = 0;
-        data.moveToFirst();
-        try {
-            while(data.moveToNext()){
-                float workoutDistance = data.getFloat(data.getColumnIndex(WorkoutEntry.COLUMN_DISTANCE));
-                distance += workoutDistance;
-            }
-        }finally {
+        if (data.moveToFirst()) {
+            float distance = 0;
             data.moveToFirst();
-            float firstWorkout = data.getFloat(data.getColumnIndex(WorkoutEntry.COLUMN_DISTANCE));
-            distance += firstWorkout;
+            try {
+                while (data.moveToNext()) {
+                    float workoutDistance = data.getFloat(data.getColumnIndex(WorkoutEntry.COLUMN_DISTANCE));
+                    distance += workoutDistance;
+                }
+            } finally {
+                data.moveToFirst();
+                float firstWorkout = data.getFloat(data.getColumnIndex(WorkoutEntry.COLUMN_DISTANCE));
+                distance += firstWorkout;
+            }
+
+            // Finds the view that will be used to hold the query result.
+            TextView distanceTextView = findViewById(R.id.distance_overview_kpi);
+
+            // Stores the query result to the selected TextView.
+            distanceTextView.setText(Float.toString(distance));
+
+        }else {
+            // Finds the view that will be used to hold the query result.
+            TextView distanceTextView = findViewById(R.id.distance_overview_kpi);
+
+            // Stores the query result to the selected TextView.
+            distanceTextView.setText("00.00");
         }
-
-        // Finds the view that will be used to hold the query result.
-        TextView distanceTextView = findViewById(R.id.distance_overview_kpi);
-
-        // Stores the query result to the selected TextView.
-        distanceTextView.setText(Float.toString(distance));
-
     }
 
     @Override
